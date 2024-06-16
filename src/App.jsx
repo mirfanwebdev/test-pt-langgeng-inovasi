@@ -1,35 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { HiOutlineUserCircle } from "react-icons/hi2";
+
+import Post from "./components/Post";
+import Profile from "./components/Profile";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  // display each components
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="sm:max-w-2xl sm:m-auto">
+      <div className="flex flex-col">
+        <div className="bg-slate-400 h-20 flex items-center p-2">
+          <HiOutlineUserCircle className="text-5xl" />
+        </div>
+        <Profile />
+        <Post />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </main>
+  );
 }
 
-export default App
+export default App;
